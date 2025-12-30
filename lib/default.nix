@@ -278,17 +278,26 @@ rec {
   # Build blur configuration (modern Hyprland 0.40+)
   # Removed deprecated fields: noise, contrast, brightness, vibrancy, vibrancy_darkness
   # Modern blur only uses: enabled, size, passes, new_optimizations, ignore_opacity
+  # All values use mkDefault so profiles can override them
   mkBlur = { enabled ? true, size ? 10, passes ? 3, new_optimizations ? true, ignore_opacity ? false }:
   {
-    inherit enabled size passes new_optimizations ignore_opacity;
+    enabled = lib.mkDefault enabled;
+    size = lib.mkDefault size;
+    passes = lib.mkDefault passes;
+    new_optimizations = lib.mkDefault new_optimizations;
+    ignore_opacity = lib.mkDefault ignore_opacity;
   };
 
   # Build shadow configuration
+  # All values use mkDefault so profiles can override them
   mkShadow = { enabled ? true, range ? 20, renderPower ? 3, offset ? "0 4", color ? "rgba(00000066)", colorInactive ? "rgba(00000044)" }:
   {
-    inherit enabled range offset color;
-    render_power = renderPower;
-    color_inactive = colorInactive;
+    enabled = lib.mkDefault enabled;
+    range = lib.mkDefault range;
+    offset = lib.mkDefault offset;
+    color = lib.mkDefault color;
+    render_power = lib.mkDefault renderPower;
+    color_inactive = lib.mkDefault colorInactive;
   };
 
   # ==========================================
