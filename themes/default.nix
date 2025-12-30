@@ -44,12 +44,8 @@ let
           enabled = true;
           size = blur.size;
           passes = blur.passes;
-          xray = true;
-          noise = 0.02;
-          contrast = 0.9;
-          brightness = 0.8;
-          vibrancy = 0.2;
-          vibrancyDarkness = 0.5;
+          new_optimizations = true;
+          ignore_opacity = false;
         };
 
         active_opacity = lib.mkDefault opacity.active;

@@ -275,12 +275,12 @@ rec {
   # DECORATION BUILDERS
   # ==========================================
   
-  # Build blur configuration
-  mkBlur = { enabled ? true, size ? 10, passes ? 3, xray ? true, noise ? 0.02, contrast ? 0.9, brightness ? 0.8, vibrancy ? 0.2, vibrancyDarkness ? 0.5 }:
+  # Build blur configuration (modern Hyprland 0.40+)
+  # Removed deprecated fields: noise, contrast, brightness, vibrancy, vibrancy_darkness
+  # Modern blur only uses: enabled, size, passes, new_optimizations, ignore_opacity
+  mkBlur = { enabled ? true, size ? 10, passes ? 3, new_optimizations ? true, ignore_opacity ? false }:
   {
-    inherit enabled size passes xray noise contrast brightness vibrancy;
-    vibrancy_darkness = vibrancyDarkness;
-    ignore_opacity = false;
+    inherit enabled size passes new_optimizations ignore_opacity;
   };
 
   # Build shadow configuration
