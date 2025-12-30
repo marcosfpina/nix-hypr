@@ -30,15 +30,15 @@ let
     inherit name;
     settings = {
       general = {
-        gaps_in = gaps.inner;
-        gaps_out = gaps.outer;
-        border_size = border.size;
-        "col.active_border" = gradient [ palette.primary palette.secondary ] border.angle;
-        "col.inactive_border" = hexToRgba palette.surface 0.5;
+        gaps_in = lib.mkDefault gaps.inner;
+        gaps_out = lib.mkDefault gaps.outer;
+        border_size = lib.mkDefault border.size;
+        "col.active_border" = lib.mkDefault (gradient [ palette.primary palette.secondary ] border.angle);
+        "col.inactive_border" = lib.mkDefault (hexToRgba palette.surface 0.5);
       };
 
       decoration = {
-        rounding = rounding;
+        rounding = lib.mkDefault rounding;
         
         blur = mkBlur {
           enabled = true;
@@ -61,8 +61,8 @@ let
           colorInactive = "rgba(00000044)";
         };
 
-        dim_inactive = true;
-        dim_strength = dimStrength;
+        dim_inactive = lib.mkDefault true;
+        dim_strength = lib.mkDefault dimStrength;
       };
 
       animations = {
@@ -219,21 +219,21 @@ in {
     name = "minimal";
     settings = {
       general = {
-        gaps_in = 2;
-        gaps_out = 4;
-        border_size = 1;
-        "col.active_border" = "rgba(ffffffff)";
-        "col.inactive_border" = "rgba(444444ff)";
+        gaps_in = lib.mkDefault 2;
+        gaps_out = lib.mkDefault 4;
+        border_size = lib.mkDefault 1;
+        "col.active_border" = lib.mkDefault "rgba(ffffffff)";
+        "col.inactive_border" = lib.mkDefault "rgba(444444ff)";
       };
 
       decoration = {
-        rounding = 0;
-        blur.enabled = false;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
-        fullscreen_opacity = 1.0;
-        shadow.enabled = false;
-        dim_inactive = false;
+        rounding = lib.mkDefault 0;
+        blur.enabled = lib.mkDefault false;
+        active_opacity = lib.mkDefault 1.0;
+        inactive_opacity = lib.mkDefault 1.0;
+        fullscreen_opacity = lib.mkDefault 1.0;
+        shadow.enabled = lib.mkDefault false;
+        dim_inactive = lib.mkDefault false;
       };
 
       animations.enabled = false;
