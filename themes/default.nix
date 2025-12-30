@@ -52,9 +52,9 @@ let
           vibrancyDarkness = 0.5;
         };
 
-        active_opacity = opacity.active;
-        inactive_opacity = opacity.inactive;
-        fullscreen_opacity = opacity.fullscreen;
+        active_opacity = lib.mkDefault opacity.active;
+        inactive_opacity = lib.mkDefault opacity.inactive;
+        fullscreen_opacity = lib.mkDefault opacity.fullscreen;
 
         shadow = mkShadow {
           enabled = true;

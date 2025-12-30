@@ -48,8 +48,8 @@ in {
         shadow.enabled = false;
         dim_inactive = false;
         rounding = 4;  # Minimal rounding
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
+        active_opacity = lib.mkDefault 1.0;
+        inactive_opacity = lib.mkDefault 1.0;
       };
 
       # Reduce gaps for more screen real estate
@@ -112,8 +112,8 @@ in {
         dim_inactive = true;
         dim_strength = 0.2;  # More pronounced to focus attention
         rounding = 8;
-        active_opacity = 0.98;
-        inactive_opacity = 0.92;
+        active_opacity = lib.mkDefault 0.98;
+        inactive_opacity = lib.mkDefault 0.92;
       };
 
       # Comfortable gaps
@@ -144,8 +144,8 @@ in {
         shadow.enabled = false;
         dim_inactive = false;
         rounding = 0;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
+        active_opacity = lib.mkDefault 1.0;
+        inactive_opacity = lib.mkDefault 1.0;
       };
 
       general = {
@@ -191,8 +191,8 @@ in {
         dim_inactive = true;
         dim_strength = 0.25;
         rounding = 16;
-        active_opacity = 0.95;
-        inactive_opacity = 0.85;
+        active_opacity = lib.mkDefault 0.95;
+        inactive_opacity = lib.mkDefault 0.85;
       };
 
       general = {
@@ -241,8 +241,8 @@ in {
         dim_inactive = true;
         dim_strength = 0.12;
         rounding = 10;
-        active_opacity = 0.94;
-        inactive_opacity = 0.88;
+        active_opacity = lib.mkDefault 0.94;
+        inactive_opacity = lib.mkDefault 0.88;
       };
 
       general = {
@@ -296,8 +296,8 @@ in {
         };
         dim_inactive = false;  # Keep all windows visible for stream
         rounding = 10;
-        active_opacity = 0.98;
-        inactive_opacity = 0.95;  # Keep inactive windows visible
+        active_opacity = lib.mkDefault 0.98;
+        inactive_opacity = lib.mkDefault 0.95;  # Keep inactive windows visible
       };
 
       general = {
